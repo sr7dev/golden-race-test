@@ -9,13 +9,14 @@ import ballColors from '../ball-colors';
 export class BallSelectorComponent implements OnInit {
   @Input() selectedBalls: number[] = [];
   @Input() bettedBall: number = 0;
+  @Input() betValue: number = 0;
   @Output() toggleBall = new EventEmitter<number>();
   @Output() clearSelectedBalls = new EventEmitter<number>();
   balls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   colors = ballColors;
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   clickBall(ball: number) {
     this.toggleBall.emit(ball);

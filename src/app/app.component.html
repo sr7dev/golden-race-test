@@ -4,18 +4,13 @@
       <h2 class="text-center mb-5">Betting Game</h2>
       <div class="row content">
         <div class="col-sm-8">
-          <app-ball-selector
-            [selectedBalls]="selectedBalls"
-            (toggleBall)="toggleBall($event)"
-            (clearSelectedBalls)="selectedBalls = []"
-            [bettedBall]="bettedBall"
-          ></app-ball-selector>
+          <app-ball-selector [selectedBalls]="selectedBalls" (toggleBall)="toggleBall($event)"
+            (clearSelectedBalls)="selectedBalls = []" [bettedBall]="bettedBall" [betValue]="betValue">
+          </app-ball-selector>
         </div>
         <div class="col-sm-4 sidenav">
-          <app-bet-slip
-            [selectedBalls]="selectedBalls"
-            (placeBet)="placeBet($event)"
-          ></app-bet-slip>
+          <app-bet-slip [selectedBalls]="selectedBalls" (placeBet)="placeBet($event)" (betMoney)="betMoney($event)">
+          </app-bet-slip>
         </div>
       </div>
     </div>

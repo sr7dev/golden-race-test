@@ -4,14 +4,9 @@
       <div class="mb-5">
         <h4 class="mb-4">Numbers</h4>
         <div class="d-flex">
-          <div
-            class="ball"
-            *ngFor="let ball of balls"
-            [style.background]="
+          <div class="ball" *ngFor="let ball of balls" [style.background]="
               selectedBalls.includes(ball) ? colors[ball] : colors[ball] + '11'
-            "
-            (click)="clickBall(ball)"
-          >
+            " (click)="clickBall(ball)">
             {{ ball }}
           </div>
         </div>
@@ -26,11 +21,8 @@
       <div class="ball mb-4" [style.background]="colors[bettedBall]">
         {{ bettedBall }}
       </div>
-      <div
-        class="h2"
-        [ngClass]="{ 'text-success': isWon, 'text-danger': !isWon }"
-      >
-        {{ isWon ? "YOU WON" : "YOU LOST" }}
+      <div class="h2" [ngClass]="{ 'text-success': isWon, 'text-danger': !isWon }">
+        {{ isWon ? "YOU WON" : "YOU LOST" }} ({{ isWon ? betValue * 1.5 : betValue }}€)
       </div>
     </ng-container>
   </div>
