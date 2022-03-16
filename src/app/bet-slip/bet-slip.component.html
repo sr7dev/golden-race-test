@@ -1,0 +1,35 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="d-flex mb-5">
+      <div
+        class="ball"
+        *ngFor="let ball of balls"
+        [style.background]="
+          ball < selectedBalls.length ? colors[selectedBalls[ball]] : '#DDDDDD'
+        "
+      >
+        {{ ball < selectedBalls.length ? selectedBalls[ball] : "" }}
+      </div>
+    </div>
+    <div class="d-flex px-5 mb-5">
+      <div class="input-group mr-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"
+            >{{ selectedBalls.length }} x
+          </span>
+        </div>
+        <input
+          min="5"
+          type="number"
+          [(ngModel)]="bet"
+          class="form-control"
+          placeholder="Bet"
+        />
+      </div>
+      <button class="btn btn-primary ml-4" type="button">Ok</button>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mb-2">Total: {{ bettingValue }}€</div>
+<button class="btn btn-primary w-100" (click)="startBet()">Place Bet</button>

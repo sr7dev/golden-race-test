@@ -1,0 +1,14 @@
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+  cursor: pointer;
+}
